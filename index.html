@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chúc mừng sinh nhật anh Tuấn Hải 🎉</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --pink:#ff2e88; --yellow:#ffd60a; --cyan:#00e5ff; --violet:#7c3aed;
+  --orange:#ff7a00; --lime:#8cff3a; --night:#1b0a3d; --ink:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Be Vietnam Pro',system-ui,sans-serif;color:var(--ink);
+  background:var(--night);overflow-x:hidden;min-height:100vh;
+}
+/* nền loang màu chuyển động */
+.bg{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(circle at 15% 20%,var(--pink) 0,transparent 38%),
+  radial-gradient(circle at 85% 15%,var(--cyan) 0,transparent 35%),
+  radial-gradient(circle at 75% 85%,var(--orange) 0,transparent 40%),
+  radial-gradient(circle at 20% 90%,var(--violet) 0,transparent 45%),var(--night);
+  background-size:140% 140%;animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{to{background-position:100% 100%;filter:hue-rotate(40deg)}}
+canvas#fx{position:fixed;inset:0;z-index:50;pointer-events:none}
+.balloons{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.balloon{position:absolute;bottom:-140px;width:56px;height:70px;border-radius:50% 50% 48% 48%;
+  animation:rise linear infinite;opacity:.9}
+.balloon::after{content:"";position:absolute;left:50%;top:100%;width:2px;height:60px;background:rgba(255,255,255,.6)}
+@keyframes rise{to{transform:translateY(-120vh) rotate(12deg)}}
+
+section{max-width:980px;margin:0 auto;padding:56px 20px}
+.hero{text-align:center;padding-top:44px}
+.hero .small{font-weight:600;font-size:clamp(1rem,3vw,1.3rem);letter-spacing:.02em}
+h1{font-family:'Baloo 2',sans-serif;font-weight:800;line-height:1;
+  font-size:clamp(2.6rem,10vw,6.4rem);margin:10px 0 6px;text-shadow:0 6px 0 rgba(0,0,0,.25)}
+h1 span{display:inline-block;animation:bounce 1.6s ease-in-out infinite}
+@keyframes bounce{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+.name{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(2.4rem,9vw,5.6rem);line-height:1.1;
+  background:linear-gradient(90deg,var(--yellow),var(--lime),var(--cyan),var(--pink),var(--yellow));
+  background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:flow 5s linear infinite;filter:drop-shadow(0 5px 0 rgba(0,0,0,.3))}
+@keyframes flow{to{background-position:300% 0}}
+
+/* bánh kem */
+.cake{width:min(300px,80vw);margin:22px auto 8px;cursor:pointer;filter:drop-shadow(0 14px 18px rgba(0,0,0,.35))}
+.flame{transform-origin:50% 100%;animation:flick .35s ease-in-out infinite alternate}
+@keyframes flick{from{transform:scale(1,1) rotate(-4deg)}to{transform:scale(.88,1.15) rotate(4deg)}}
+.out .flame{display:none}
+.btn{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.25rem;border:0;cursor:pointer;color:#2a0a4a;
+  padding:14px 30px;border-radius:999px;background:var(--yellow);box-shadow:0 7px 0 #c79a00;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(5px);box-shadow:0 2px 0 #c79a00}
+.btn:focus-visible{outline:4px solid var(--cyan);outline-offset:4px}
+.hint{margin-top:14px;font-size:.95rem;opacity:.9}
+
+/* lá thư */
+.letter{display:none;background:#fff;color:#2a0a4a;border-radius:28px 6px 28px 6px;padding:clamp(24px,5vw,48px);
+  border:6px solid var(--pink);box-shadow:12px 12px 0 var(--violet);max-width:760px;margin:0 auto;
+  transform:rotate(-1deg)}
+.letter.show{display:block;animation:pop .7s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(.4) rotate(-8deg);opacity:0}}
+.letter h2{font-family:'Baloo 2',sans-serif;font-size:clamp(1.6rem,5vw,2.4rem);color:var(--pink);margin-bottom:12px}
+.letter p{font-size:clamp(1rem,2.6vw,1.18rem);line-height:1.8;margin-bottom:14px}
+.sign{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:1.3rem;color:var(--violet);text-align:right}
+
+/* lời chúc */
+.title{font-family:'Baloo 2',sans-serif;font-weight:800;text-align:center;font-size:clamp(1.8rem,6vw,3rem);margin-bottom:28px;
+  text-shadow:0 4px 0 rgba(0,0,0,.25)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{padding:26px 22px;color:#220a40;font-weight:600;transition:transform .25s;border:4px solid #220a40;
+  box-shadow:7px 7px 0 rgba(0,0,0,.45)}
+.card:hover{transform:translateY(-8px) rotate(-1.5deg)}
+.card b{display:block;font-family:'Baloo 2',sans-serif;font-size:1.5rem;line-height:1.15;margin:6px 0 8px}
+.card i{font-style:normal;font-size:2.4rem}
+.card p{font-weight:400;line-height:1.55;font-size:.98rem}
+.c1{background:var(--yellow);border-radius:34px 8px 34px 8px}
+.c2{background:var(--cyan);border-radius:8px 34px 8px 34px}
+.c3{background:var(--pink);color:#fff;border-radius:34px 34px 8px 8px}
+.c4{background:var(--lime);border-radius:8px 8px 34px 34px}
+.c5{background:var(--orange);border-radius:34px 8px 34px 8px}
+.c6{background:#c9a7ff;border-radius:8px 34px 8px 34px}
+
+.end{text-align:center;padding-bottom:90px}
+.end p{font-family:'Baloo 2',sans-serif;font-weight:800;font-size:clamp(1.5rem,5vw,2.6rem);line-height:1.25}
+.end .btn{margin-top:26px;background:var(--cyan);box-shadow:0 7px 0 #0094a3}
+footer{text-align:center;padding:0 20px 30px;opacity:.85;font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="balloons" id="balloons" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+
+<section class="hero">
+  <p class="small">🎂 Hôm nay là ngày của anh 🎂</p>
+  <h1 id="title" aria-label="Chúc mừng sinh nhật"></h1>
+  <div class="name">Anh Tuấn Hải</div>
+
+  <div class="cake" id="cake" role="button" tabindex="0" aria-label="Thổi nến">
+    <svg viewBox="0 0 300 250" xmlns="http://www.w3.org/2000/svg">
+      <g class="candles">
+        <rect x="70" y="52" width="12" height="52" rx="3" fill="#00e5ff"/>
+        <rect x="112" y="46" width="12" height="58" rx="3" fill="#ffd60a"/>
+        <rect x="150" y="40" width="12" height="64" rx="3" fill="#ff2e88"/>
+        <rect x="190" y="46" width="12" height="58" rx="3" fill="#8cff3a"/>
+        <rect x="228" y="52" width="12" height="52" rx="3" fill="#ff7a00"/>
+        <g class="flame"><ellipse cx="76" cy="38" rx="8" ry="14" fill="#ffb300"/><ellipse cx="76" cy="42" rx="4" ry="8" fill="#fff6a8"/></g>
+        <g class="flame" style="animation-delay:.1s"><ellipse cx="118" cy="32" rx="8" ry="14" fill="#ffb300"/><ellipse cx="118" cy="36" rx="4" ry="8" fill="#fff6a8"/></g>
+        <g class="flame" style="animation-delay:.2s"><ellipse cx="156" cy="26" rx="8" ry="14" fill="#ffb300"/><ellipse cx="156" cy="30" rx="4" ry="8" fill="#fff6a8"/></g>
+        <g class="flame" style="animation-delay:.05s"><ellipse cx="196" cy="32" rx="8" ry="14" fill="#ffb300"/><ellipse cx="196" cy="36" rx="4" ry="8" fill="#fff6a8"/></g>
+        <g class="flame" style="animation-delay:.15s"><ellipse cx="234" cy="38" rx="8" ry="14" fill="#ffb300"/><ellipse cx="234" cy="42" rx="4" ry="8" fill="#fff6a8"/></g>
+      </g>
+      <rect x="40" y="100" width="220" height="60" rx="14" fill="#ff2e88"/>
+      <path d="M40 118 q18 22 36 0 t36 0 t36 0 t36 0 t36 0 t36 0 V108 H40Z" fill="#fff"/>
+      <rect x="22" y="158" width="256" height="72" rx="16" fill="#7c3aed"/>
+      <path d="M22 176 q21 22 42 0 t42 0 t42 0 t42 0 t42 0 t42 0 V166 H22Z" fill="#ffd60a"/>
+      <circle cx="70" cy="205" r="7" fill="#00e5ff"/><circle cx="150" cy="212" r="7" fill="#8cff3a"/><circle cx="230" cy="205" r="7" fill="#ff7a00"/>
+      <rect x="8" y="228" width="284" height="14" rx="7" fill="#fff"/>
+    </svg>
+  </div>
+  <button class="btn" id="wishBtn">🕯️ Thổi nến &amp; mở lời chúc</button>
+  <p class="hint">Chạm vào bánh hoặc bấm nút nhé!</p>
+</section>
+
+<section>
+  <article class="letter" id="letter">
+    <h2>Gửi anh Tuấn Hải 💌</h2>
+    <p>Hôm nay là một ngày thật đặc biệt, vì cách đây bao nhiêu năm, thế giới đã có thêm một người đáng quý như anh.</p>
+    <p>Cảm ơn anh vì sự chân thành, nhiệt huyết và những năng lượng tích cực mà anh luôn mang đến cho mọi người xung quanh. Có anh, mọi thứ như sáng và ấm hơn rất nhiều.</p>
+    <p>Chúc anh luôn khỏe mạnh, bình an, giữ mãi nụ cười trên môi và ngọn lửa đam mê trong tim. Mong mỗi bước anh đi đều có may mắn đồng hành, mỗi giấc mơ anh ấp ủ đều trở thành hiện thực.</p>
+    <p>Sinh nhật vui thật vui, thật trọn vẹn và hạnh phúc anh nhé!</p>
+    <div class="sign">Với tất cả sự quý mến ❤️</div>
+  </article>
+</section>
+
+<section>
+  <h2 class="title">Những điều em muốn gửi đến anh 🌈</h2>
+  <div class="grid">
+    <div class="card c1"><i>💪</i><b>Sức khỏe dồi dào</b><p>Luôn tràn đầy năng lượng để làm mọi điều anh yêu thích.</p></div>
+    <div class="card c2"><i>🕊️</i><b>Bình an trong lòng</b><p>Mỗi ngày trôi qua nhẹ nhàng, an yên và đủ đầy.</p></div>
+    <div class="card c3"><i>🚀</i><b>Thành công rực rỡ</b><p>Mọi cố gắng của anh đều nở hoa và được đền đáp xứng đáng.</p></div>
+    <div class="card c4"><i>😄</i><b>Tiếng cười mỗi ngày</b><p>Niềm vui đến thật nhiều, muộn phiền thì ở lại thật xa.</p></div>
+    <div class="card c5"><i>🤝</i><b>Yêu thương vây quanh</b><p>Bên anh luôn có gia đình, bạn bè và những người trân trọng anh.</p></div>
+    <div class="card c6"><i>⭐</i><b>Ước mơ thành thật</b><p>Dám mơ lớn, đi thật xa và chạm tới tất cả điều anh mong muốn.</p></div>
+  </div>
+</section>
+
+<section class="end">
+  <p>Chúc mừng sinh nhật anh Tuấn Hải!<br>Tuổi mới rực rỡ như pháo hoa 🎆</p>
+  <button class="btn" id="boom">🎉 Bắn pháo giấy!</button>
+</section>
+<footer>Làm bằng cả tấm lòng, dành tặng anh Tuấn Hải 💛</footer>
+
+<script>
+const COLORS=['#ff2e88','#ffd60a','#00e5ff','#8cff3a','#ff7a00','#c9a7ff','#ffffff'];
+
+// Tiêu đề: mỗi chữ một màu
+const t=document.getElementById('title');
+"Chúc mừng sinh nhật".split('').forEach((ch,i)=>{
+  const s=document.createElement('span');
+  s.textContent=ch===' '?'\u00A0':ch;
+  s.style.color=COLORS[i%6];
+  s.style.animationDelay=(i*0.08)+'s';
+  t.appendChild(s);
+});
+
+// Bóng bay
+const bl=document.getElementById('balloons');
+for(let i=0;i<16;i++){
+  const b=document.createElement('div');b.className='balloon';
+  b.style.left=(Math.random()*96)+'%';
+  b.style.background=COLORS[i%6];
+  b.style.animationDuration=(10+Math.random()*12)+'s';
+  b.style.animationDelay=(-Math.random()*18)+'s';
+  const sc=.7+Math.random()*.8;b.style.width=56*sc+'px';b.style.height=70*sc+'px';
+  bl.appendChild(b);
+}
+
+// Pháo giấy
+const cv=document.getElementById('fx'),cx=cv.getContext('2d');let P=[];
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener('resize',size);
+function burst(x,y,n=140){
+  for(let i=0;i<n;i++){
+    const a=Math.random()*Math.PI*2,v=4+Math.random()*10;
+    P.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-5,w:6+Math.random()*7,h:4+Math.random()*6,
+      r:Math.random()*6,vr:(Math.random()-.5)*.5,c:COLORS[(Math.random()*COLORS.length)|0],life:140+Math.random()*80});
+  }
+  if(!running){running=true;loop()}
+}
+let running=false;
+function loop(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  P=P.filter(p=>p.life>0&&p.y<cv.height+30);
+  P.forEach(p=>{
+    p.vy+=.22;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;p.life--;
+    cx.save();cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;
+    cx.globalAlpha=Math.min(1,p.life/40);cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();
+  });
+  if(P.length)requestAnimationFrame(loop);else{running=false;cx.clearRect(0,0,cv.width,cv.height)}
+}
+function shower(){
+  [.2,.5,.8].forEach((f,i)=>setTimeout(()=>burst(cv.width*f,cv.height*.35),i*250));
+}
+
+// Thổi nến + mở thư
+const cake=document.getElementById('cake'),letter=document.getElementById('letter');
+function blow(){
+  cake.classList.add('out');
+  letter.classList.add('show');
+  shower();
+  setTimeout(()=>letter.scrollIntoView({behavior:'smooth',block:'center'}),700);
+}
+document.getElementById('wishBtn').onclick=blow;
+cake.onclick=blow;
+cake.onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();blow()}};
+document.getElementById('boom').onclick=shower;
+addEventListener('click',e=>{if(!e.target.closest('button'))burst(e.clientX,e.clientY,50)});
+</script>
+</body>
+</html>
